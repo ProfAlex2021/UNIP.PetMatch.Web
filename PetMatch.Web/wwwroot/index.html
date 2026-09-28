@@ -1,0 +1,109 @@
+﻿<html lang="pt‑br">
+<head>
+    <meta charset="utf‑8" />
+    <meta name="viewport" content="width =device‑width, initial‑scale=1" />
+    <title>PetMatch | Adoção responsável</title>
+    <link rel="stylesheet" href="/css/petmatch.css" />
+</head>
+<body>
+    <header class="hero">
+        <nav class="topbar">
+            <strong class="brand">PetMatch</strong>
+            <span>Doação e adoção responsável de pets</span>
+        </nav>
+        <section class="hero‑content">
+            <div>
+                <p class="eyebrow">Primeira aplicação ASP.NET Core</p>
+                <h1>Encontre um pet para uma adoção consciente.</h1>
+                <p>
+                    O PetMatch conecta pessoas interessadas em adotar a animais
+                    disponíveis, valorizando informação clara, cuidado e
+                    responsabilidade.
+                </p>
+            </div>
+            <div class="hero‑card">
+                <span class="hero‑icon">🐾</span>
+                <strong id="totalPets">0 pets</strong>
+                <small>disponíveis para conhecer</small>
+            </div>
+        </section>
+    </header>
+    <main class="container">
+        <section class="panel">
+            <h2>Pets disponíveis</h2>
+            <p>
+                Use os filtros para consultar a API com parâmetros de query string.
+            </p>
+            <div class="filters">
+                <label>
+                    Espécie
+                    <select id="filtroEspecie">
+                        <option value="">Todas</option>
+                        <option value="Cachorro">Cachorro</option>
+                        <option value="Gato">Gato</option>
+                    </select>
+                </label>
+                <label>
+                    Porte
+                    <select id="filtroPorte">
+                        <option value="">Todos</option>
+                        <option value="Pequeno">Pequeno</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                </label>
+                <label>
+                    Cidade
+                    <input id="filtroCidade"
+                           type="text"
+                           placeholder="Ex.: Curitiba" />
+                </label>
+                <button id="botaoFiltrar" type="button">Filtrar</button>
+            </div>
+            <div id="listaPets" class="pet‑grid"></div>
+        </section>
+        <section class="two‑columns">
+            <div class="panel">
+                <h2>Consultar por identificador</h2>
+                <p>
+                    Esta consulta usa parâmetro de rota tipado em
+                    <code> /api/ pets/{id} </code>.
+                </p>
+                <div class="inline‑form">
+                    <input id="petIdConsulta" type="number" min="1" value="1" />
+                    <button id="botaoConsultar" type="button">Consultar</button>
+                </div>
+                <div id="resultadoConsulta" class="result‑box"></div>
+            </div>
+            <div class="panel">
+                <h2>Manifestar interesse</h2>
+                <p>
+                    O formulário envia um corpo JSON para o endpoint
+                    <code> POST /api/interesses </code>.
+                </p>
+                <form id="formInteresse" class="interest‑form">
+                    <label>
+                        Pet
+                        <select id="petInteresse" required></select>
+                    </label>
+                    <label>
+                        Nome
+                        <input id="nomeInteresse" type="text" required />
+                    </label>
+                    <label>
+                        E‑mail
+                        <input id="emailInteresse" type="email" required />
+                    </label>
+                    <label>
+                        Mensagem
+                        <textarea id="mensagemInteresse" rows="4" required></textarea>
+                    </label>
+                    <button type="submit">Enviar interesse</button>
+                </form>
+                <div id="retornoInteresse" class="result‑box"></div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/petmatch.js"></script>
+</body>
+</html>

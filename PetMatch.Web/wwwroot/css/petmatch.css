@@ -1,0 +1,247 @@
+﻿:root {
+    font‑family: Inter, Segoe UI, Arial, sans‑serif;
+    color: #24312f;
+    background: #f7f1e8;
+}
+
+* {
+    box‑sizing: border‑box;
+}
+
+body {
+    margin: 0;
+    min‑width: 320px;
+}
+
+.hero {
+    background: linear‑gradient(135deg, #24524a, #4f8f76);
+    color: #fff;
+    padding: 28px clamp(18px, 4vw, 56px) 56px;
+}
+
+.topbar,
+.hero‑content,
+.container {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.topbar {
+    display: flex;
+    justify‑content: space‑between;
+    gap: 16px;
+    align‑items: center;
+    margin‑bottom: 52px;
+}
+
+.brand {
+    font‑size: 1.45rem;
+    letter‑spacing: 0.02em;
+}
+
+.hero‑content {
+    display: grid;
+    grid‑template‑columns: minmax(0, 1fr) 260px;
+    gap: 32px;
+    align‑items: center;
+}
+
+.eyebrow {
+    text‑transform: uppercase;
+    letter‑spacing: 0.14em;
+    font‑size: 0.78rem;
+    opacity: 0.9;
+}
+
+h1 {
+    font‑size: clamp(2.2rem, 5vw, 4.3rem);
+    line‑height: 1;
+    margin: 0 0 18px;
+}
+
+h2 {
+    margin‑top: 0;
+}
+
+.hero‑content p {
+    max‑width: 680px;
+    font‑size: 1.08rem;
+}
+
+.hero‑card {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border‑radius: 28px;
+    padding: 28px;
+    min‑height: 220px;
+    display: grid;
+    align‑content: center;
+    text‑align: center;
+    backdrop‑filter: blur(8px);
+}
+
+.hero‑icon {
+    font‑size: 4rem;
+}
+
+.hero‑card strong {
+    display: block;
+    font‑size: 2rem;
+    margin‑top: 12px;
+}
+
+.container {
+    padding: 32px clamp(18px, 4vw, 56px) 56px;
+}
+
+.panel {
+    background: #fffaf2;
+    border: 1px solid #eadcc9;
+    border‑radius: 26px;
+    padding: 24px;
+    box‑shadow: 0 18px 50px rgba(36, 49, 47, 0.08);
+    margin‑bottom: 24px;
+}
+
+.filters,
+.inline‑form {
+    display: flex;
+    flex‑wrap: wrap;
+    gap: 14px;
+    align‑items: end;
+    margin: 18px 0 24px;
+}
+
+label {
+    display: grid;
+    gap: 6px;
+    font‑weight: 700;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+    border‑radius: 14px;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #d8c7b2;
+    padding: 12px 14px;
+    background: #fff;
+    min‑width: 180px;
+}
+
+button {
+    border: 0;
+    background: #24524a;
+    color: #fff;
+    padding: 12px 18px;
+    font‑weight: 800;
+    cursor: pointer;
+    transition: transform 0.15s ease, box‑shadow 0.15s ease;
+}
+
+    button:hover {
+        transform: translateY(‑1px);
+        box‑shadow: 0 10px 24px rgba(36, 82, 74, 0.22);
+    }
+
+.pet‑grid {
+    display: grid;
+    grid‑template‑columns: repeat(auto‑fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.pet‑card {
+    background: #fff;
+    border: 1px solid #eadcc9;
+    border‑radius: 22px;
+    padding: 20px;
+    display: grid;
+    gap: 12px;
+}
+
+    .pet‑card.icon {
+        font‑size: 3rem;
+    }
+
+    .pet‑card h3 {
+        margin: 0;
+        font‑size: 1.35rem;
+    }
+
+.badges {
+    display: flex;
+    gap: 8px;
+    flex‑wrap: wrap;
+}
+
+.badge {
+    background: #eaf4ef;
+    color: #24524a;
+    padding: 6px 10px;
+    border‑radius: 999px;
+    font‑size: 0.85rem;
+    font‑weight: 700;
+}
+
+.two‑columns {
+    display: grid;
+    grid‑template‑columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 24px;
+}
+
+.interest‑form {
+    display: grid;
+    gap: 14px;
+}
+
+    .interest‑form input,
+    .interest‑form select,
+    .interest‑form textarea {
+        width: 100%;
+    }
+
+.result‑box {
+    margin‑top: 16px;
+    background: #f0f7f3;
+    border‑left: 5px solid #4f8f76;
+    border‑radius: 16px;
+    padding: 14px;
+    min‑height: 52px;
+}
+
+code {
+    background: #f1e7d8;
+    padding: 2px 6px;
+    border‑radius: 8px;
+}
+
+@media (max‑width: 760px) {
+    .topbar,
+    .hero‑content,
+    .two‑columns {
+        grid‑template‑columns: 1fr;
+    }
+
+    .topbar {
+        align‑items: flex‑start;
+        flex‑direction: column;
+    }
+
+    .filters,
+    .inline‑form {
+        align‑items: stretch;
+        flex‑direction: column;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+    }
+}
