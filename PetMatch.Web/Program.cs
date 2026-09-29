@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PetMatch.Web.Data;
 using PetMatch.Web.Endpoints;
 using PetMatch.Web.Models;
@@ -7,7 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<PetMemoryStore>();
 
+//Adicionando o banco EF Core InMemory
+builder.Services.AddDbContext<PetMatchDbContext>(options =>
+    options.UseInMemoryDatabase("PetMatchDb"));
+
 var app = builder.Build();
+
+//Iniciando o banco de dados e populando com dados iniciais
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<PetMatchDbContext>();
+    //dbContext.Database.Migrate(); Sem banco físico, não é necessário migrar, apenas criar o banco em memória
+    var seed = scope.ServiceProvider.GetRequiredService<PetMatchSeed>();
+    seed.Seed();
+}
 
 app.UseHttpsRedirection();
 app.UseDefaultFiles();
